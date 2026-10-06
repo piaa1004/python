@@ -15,10 +15,10 @@
 
 ```text
 DNN_Submission/
-├── Optimization.ipynb     # Colab에서 단독 실행하는 실습 노트북
+├── Optimization.ipynb     # 소스 모듈을 불러와 실행하는 실습 노트북
 ├── README.md             # 구현 설명과 실험 결과
 └── src/
-    └── opt_utils.py       # 노트북과 동일한 NumPy 구현 소스
+    └── opt_utils.py       # 노트북이 실제로 import하는 NumPy 구현 소스
 ```
 
 1. GitHub의 [DNN_Submission.zip](https://github.com/piaa1004/python/raw/refs/heads/main/DNN_Submission.zip)을 다운로드하고 압축을 푼다.
@@ -26,7 +26,11 @@ DNN_Submission/
 3. Python 3 / CPU 런타임에서 **런타임 → 모두 실행**을 선택한다.
 4. 데이터·shape 확인, gradient checking, 학습 로그, 곡선, 최종 성능을 확인한다.
 
-노트북에 구현 코드가 모두 들어 있어 `src/opt_utils.py`를 따로 업로드하지 않아도 실행된다. NumPy와 Matplotlib을 사용하며 GPU는 필요하지 않다. 제출된 노트북은 전체 셀을 실행하여 결과를 확인하였다. 제출 전 위 표에 이름과 학번을 입력하고 `DNN_Submission` 폴더를 제출한다.
+`src/opt_utils.py`는 노트북 실행에 필요한 실제 구현 모듈이다. 노트북은 이 파일에서 함수와 클래스를 import하여 사용하며, 같은 구현을 노트북 안에 중복 정의하지 않는다. ZIP을 푼 폴더에서 실행하면 동봉된 파일을 사용한다. Colab에 노트북만 업로드하면 첫 셀이 GitHub의 고정된 버전에서 `src/opt_utils.py`를 자동으로 다운로드한 뒤 import한다. 따라서 Colab에서는 사용자가 따로 파일을 업로드하거나 import 코드를 추가할 필요가 없다. 첫 셀의 `Imported module: src/opt_utils.py` 출력으로 연결을 확인할 수 있다.
+
+소스 구현을 수정하려면 `src/opt_utils.py`를 편집한다. 이미 모듈을 import한 뒤 파일을 수정했다면 런타임을 다시 시작하고 전체 셀을 실행한다. 자동 다운로드는 파일이 없을 때만 수행하므로 기존 소스를 덮어쓰지 않는다. 로컬 Jupyter에서는 `Optimization.ipynb`와 `src/`가 함께 있는 폴더를 작업 폴더로 사용하고 NumPy와 Matplotlib을 설치한다.
+
+NumPy와 Matplotlib을 사용하며 GPU는 필요하지 않다. 제출된 노트북은 전체 셀을 실행하여 결과를 확인하였다. 제출 전 위 표에 이름과 학번을 입력하고 `DNN_Submission` 폴더를 제출한다.
 
 ## 2. 원본 실습을 활용한 부분
 
