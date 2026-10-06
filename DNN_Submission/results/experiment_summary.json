@@ -1,0 +1,57 @@
+{
+  "experiments": [
+    {
+      "experiment": "lr_0.01",
+      "learning_rate": 0.01,
+      "initial_train_loss": 0.7128911181687604,
+      "train_loss": 0.027470435260436157,
+      "train_accuracy": 0.99609375,
+      "val_loss": 0.04779608893164176,
+      "val_accuracy": 0.9791666666666666
+    },
+    {
+      "experiment": "lr_0.1",
+      "learning_rate": 0.1,
+      "initial_train_loss": 0.7128911181687604,
+      "train_loss": 0.007301731459686815,
+      "train_accuracy": 0.9986979166666666,
+      "val_loss": 0.0477733136293235,
+      "val_accuracy": 0.9791666666666666
+    }
+  ],
+  "selected_experiment": "lr_0.1",
+  "selection_rule": "lowest final validation loss",
+  "test_loss": 0.0951868097751249,
+  "test_accuracy": 0.975,
+  "split_sizes": {
+    "train": 768,
+    "validation": 192,
+    "test": 240
+  },
+  "layers_dims": [
+    2,
+    16,
+    8,
+    2
+  ],
+  "epochs": 300,
+  "batch_size": 32,
+  "data_seed": 3,
+  "model_seed": 3,
+  "batch_seed": 10,
+  "noise": 0.12,
+  "standardization": {
+    "mean": [
+      [
+        -0.01694847623080194,
+        -6.496336206950378e-05
+      ]
+    ],
+    "std": [
+      [
+        0.5782081112010509,
+        0.5456449852892408
+      ]
+    ]
+  }
+}
