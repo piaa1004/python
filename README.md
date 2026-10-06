@@ -61,8 +61,26 @@ ReLU는 0에서 미분이 불연속이므로 수치미분에 사용한 입력에
 각 epoch 로그는 CSV로 저장하며 아래 코드에서 loss/accuracy 곡선을 출력한다.
 한 종류의 쉬운 toy 데이터와 단일 seed로 실험했으므로 일반 데이터의 성능으로 해석하지 않는다.
 
-## 실행 방법
-Google Colab에서 이 ipynb 파일을 열고 런타임 → 모두 실행을 선택한다. GPU 또는 외부 데이터 파일이 필요 없다.
-실행하면 src/dnn.py, README.md, results/summary.json, epoch별 CSV 및 학습 곡선 PNG가 생성된다.
-첨부 Optimization.ipynb의 mini-batch/SGD 학습 흐름을 참고하되 (batch, features) 조건과 레이어 API에 맞추어 재구성했다.
-data.mat 대신 NumPy로 데이터를 직접 생성했다.
+## 파일 구성과 실행 방법
+
+| 파일 | 역할 |
+|---|---|
+| DNN_Submission.ipynb | 모듈 import, shape 확인, 테스트, 학습, 결과 시각화 |
+| src/opt_utils.py | 데이터·미니배치, Dense/활성함수/손실, 모델 컨테이너 |
+| src/optimization.py | Mini-batch SGD 학습 및 gradient checking |
+| src/testCases.py | 재현 가능한 테스트 입력과 기대값 |
+| src/test_utils.py | 수치미분·상대오차·shape/값 검사 |
+| src/public_tests.py | 위 모듈을 실제 import하여 기능 검증 |
+| README.md | 구현 설명과 실험 결과 |
+| results/ | epoch별 CSV, summary.json, 학습 곡선 |
+
+Google Colab에서 DNN_Submission.ipynb를 열고 런타임 → 모두 실행을 선택한다.
+노트북만 업로드해도 첫 셀이 GitHub의 고정된 버전에서 필요한 .py 파일과 README를 받아 src 폴더를 구성한다.
+ZIP 전체를 내려받아 로컬에서 실행할 때는 src 폴더와 노트북을 같은 프로젝트에 두면 다운로드가 필요 없다.
+외부 데이터나 GPU는 필요 없다. 기존 교수님 파일을 별도로 덮어쓸 필요도 없다.
+로컬 Python 패키지는 NumPy, Matplotlib이며 설치 명령은 `pip install -r requirements.txt`다.
+기능 검증은 프로젝트 폴더에서 `python src/public_tests.py`로 실행한다.
+
+첨부 Optimization.ipynb의 mini-batch/SGD 실습 흐름과 opt_utils.py/testCases.py/test_utils.py/public_tests.py의 모듈 역할을 참고했다.
+기존 데이터 방향 (features,batch)은 사용자 조건 (batch,features)에 맞게 변경했다.
+시험 조건에 따라 data.mat 대신 NumPy로 circles 데이터를 직접 생성한다.
