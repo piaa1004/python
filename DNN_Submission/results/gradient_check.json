@@ -1,0 +1,78 @@
+{
+  "epsilon": 1e-05,
+  "threshold": 1e-06,
+  "relu_min_abs_input": 0.001016958174358744,
+  "results": [
+    {
+      "parameter": "W1",
+      "shape": [
+        2,
+        16
+      ],
+      "n_checked": 32,
+      "relative_error": 8.168498345980664e-11,
+      "max_absolute_error": 1.1946332811874072e-11
+    },
+    {
+      "parameter": "b1",
+      "shape": [
+        1,
+        16
+      ],
+      "n_checked": 16,
+      "relative_error": 6.255802964655445e-11,
+      "max_absolute_error": 1.5879304815502593e-11
+    },
+    {
+      "parameter": "W2",
+      "shape": [
+        16,
+        8
+      ],
+      "n_checked": 128,
+      "relative_error": 1.2906902597540406e-10,
+      "max_absolute_error": 2.0166951442135428e-10
+    },
+    {
+      "parameter": "b2",
+      "shape": [
+        1,
+        8
+      ],
+      "n_checked": 8,
+      "relative_error": 3.504798571556347e-11,
+      "max_absolute_error": 1.1183644288426109e-11
+    },
+    {
+      "parameter": "W3",
+      "shape": [
+        8,
+        2
+      ],
+      "n_checked": 16,
+      "relative_error": 1.5799866180568687e-11,
+      "max_absolute_error": 7.398082146892193e-12
+    },
+    {
+      "parameter": "b3",
+      "shape": [
+        1,
+        2
+      ],
+      "n_checked": 2,
+      "relative_error": 5.6680466767678056e-11,
+      "max_absolute_error": 1.148572903453271e-11
+    },
+    {
+      "parameter": "X (dX)",
+      "shape": [
+        5,
+        2
+      ],
+      "n_checked": 10,
+      "relative_error": 1.1488491226063068e-10,
+      "max_absolute_error": 1.2679059191444964e-11
+    }
+  ],
+  "passed": true
+}
